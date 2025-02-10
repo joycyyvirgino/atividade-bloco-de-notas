@@ -20,6 +20,10 @@ public class ContaCorrente {
 
     public ContaCorrente(int numeroDaConta, String titular, String cpf, int agencia) {
         this.numeroDaConta = numeroDaConta;
+        if (titular == null || titular.trim().equals("")){
+
+        }
+
         this.titular = titular;
         this.cpf = cpf;
         this.agencia = agencia;
