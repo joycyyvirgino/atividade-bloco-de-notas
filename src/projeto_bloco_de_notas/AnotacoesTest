@@ -1,0 +1,81 @@
+import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class AnotacoesTest {
+
+    @org.junit.jupiter.api.Test
+    void getTexto() {
+
+        try{
+            Anotacoes nota = new Anotacoes("ola", 1);
+            assertEquals("ola", nota.getTexto());
+        } catch(Exception e){
+
+        }
+    }
+
+    @org.junit.jupiter.api.Test
+    void getId() {
+        try {
+            Anotacoes id = new  Anotacoes("pronto meu deus do ceu", 1);
+            assertEquals(1, id.getId());
+        }catch (Exception e){
+
+        }
+    }
+
+    @org.junit.jupiter.api.Test
+    void setTexto() {
+        try {
+            Anotacoes anotacao = new Anotacoes("oi", 1);
+            anotacao.setTexto("ola");
+            assertEquals("ola", anotacao.getTexto());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void getDataDeCriacao() {
+        try {
+            Anotacoes anotacoes = new Anotacoes("j",3);
+            LocalDate dataEsperada = LocalDate.now();
+            assertEquals(dataEsperada, anotacoes.getDataDeCriacao());
+        }catch (Exception e){}
+    }
+
+    @org.junit.jupiter.api.Test
+    void isDeleted() {
+        try {
+            Anotacoes delete = new Anotacoes("v",1);
+            assertEquals(false, delete.isDeleted());
+        } catch (Exception e) {
+
+        }
+    }
+
+    @org.junit.jupiter.api.Test
+    void setDeleted() {
+        try {
+            Anotacoes delete = new Anotacoes("f",2);
+            delete.setDeleted(true);
+            assertEquals(true,delete.getDeleted());
+        }catch (Exception e){}
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void contemTexto() {
+        try {
+            Anotacoes contemTex = new Anotacoes("j", 2);
+            assertEquals("j", contemTex.getTexto());
+        }catch (Exception e){}
+    }
+
+    @org.junit.jupiter.api.Test
+    void testEquals() {
+
+    }
+}
